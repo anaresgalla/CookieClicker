@@ -32,6 +32,8 @@ public class CookieClicker extends JFrame {
         JButton cookieButton = createImageButton("resources/cookie.png");
 
         jPanel.add(cookieButton);
+        springLayout.putConstraint(SpringLayout.WEST, cookieButton, 95, SpringLayout.WEST, jPanel);
+        springLayout.putConstraint(SpringLayout.NORTH, cookieButton, 175, SpringLayout.NORTH, jPanel);
 
         this.getContentPane().add(jPanel);
     }
