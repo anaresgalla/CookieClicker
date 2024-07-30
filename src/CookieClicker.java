@@ -56,6 +56,14 @@ public class CookieClicker extends JFrame {
         springLayout.putConstraint(SpringLayout.WEST, counterField, 210, SpringLayout.WEST, jPanel);
         springLayout.putConstraint(SpringLayout.NORTH, counterField, 550, SpringLayout.NORTH, jPanel);
 
+        // 5.Reset Button
+        JButton resetButton = new JButton("Reset");
+        resetButton.setFont(new Font("Dialog", Font.BOLD, 18));
+
+        jPanel.add(resetButton);
+        springLayout.putConstraint(SpringLayout.WEST, resetButton, 250, SpringLayout.WEST, jPanel);
+        springLayout.putConstraint(SpringLayout.NORTH, resetButton, 650, SpringLayout.NORTH, jPanel);
+
         this.getContentPane().add(jPanel);
     }
 
