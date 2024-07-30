@@ -5,6 +5,8 @@ import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
 public class CookieClicker extends JFrame {
+    private JTextField counterField;
+
     public CookieClicker(){
         super("Cookie Clicker");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,6 +44,17 @@ public class CookieClicker extends JFrame {
         jPanel.add(counterLabel);
         springLayout.putConstraint(SpringLayout.WEST, counterLabel, 95, SpringLayout.WEST, jPanel);
         springLayout.putConstraint(SpringLayout.NORTH, counterLabel, 550, SpringLayout.NORTH, jPanel);
+
+        // 4.Counter Field
+        counterField = new JTextField(10);
+        counterField.setFont(new Font("Dialog", Font.BOLD, 26));
+        counterField.setHorizontalAlignment(SwingConstants.RIGHT);
+        counterField.setText("0");
+        counterField.setEditable(false);
+
+        jPanel.add(counterField);
+        springLayout.putConstraint(SpringLayout.WEST, counterField, 210, SpringLayout.WEST, jPanel);
+        springLayout.putConstraint(SpringLayout.NORTH, counterField, 550, SpringLayout.NORTH, jPanel);
 
         this.getContentPane().add(jPanel);
     }
