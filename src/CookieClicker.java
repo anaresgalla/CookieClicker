@@ -28,6 +28,11 @@ public class CookieClicker extends JFrame {
         springLayout.putConstraint(SpringLayout.WEST, bannerImg, 65, SpringLayout.WEST, jPanel);
         springLayout.putConstraint(SpringLayout.NORTH, bannerImg, 25, SpringLayout.NORTH, jPanel);
 
+        // 2.Cookie Button
+        JButton cookieButton = createImageButton("resources/cookie.png");
+
+        jPanel.add(cookieButton);
+
         this.getContentPane().add(jPanel);
     }
 
@@ -54,5 +59,18 @@ public class CookieClicker extends JFrame {
         graphics2D.drawImage(image, 0,0, targetWidth, targetHeight, null);
         graphics2D.dispose();
         return newImage;
+    }
+
+    private JButton createImageButton(String fileName){
+        JButton button;
+        try{
+            InputStream inputStream = this.getClass().getResourceAsStream(fileName);
+            Image image = ImageIO.read(inputStream);
+            button = new JButton(new ImageIcon(image));
+            return button;
+        }catch(Exception e){
+            System.out.println("Error: " + e);
+            return null;
+        }
     }
 }
