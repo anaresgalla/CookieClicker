@@ -35,6 +35,14 @@ public class CookieClicker extends JFrame {
         springLayout.putConstraint(SpringLayout.WEST, cookieButton, 95, SpringLayout.WEST, jPanel);
         springLayout.putConstraint(SpringLayout.NORTH, cookieButton, 175, SpringLayout.NORTH, jPanel);
 
+        // 3.Counter Label
+        JLabel counterLabel = new JLabel("Clicks: ");
+        counterLabel.setFont(new Font("Dialog", Font.BOLD, 26));
+
+        jPanel.add(counterLabel);
+        springLayout.putConstraint(SpringLayout.WEST, counterLabel, 95, SpringLayout.WEST, jPanel);
+        springLayout.putConstraint(SpringLayout.NORTH, counterLabel, 550, SpringLayout.NORTH, jPanel);
+
         this.getContentPane().add(jPanel);
     }
 
