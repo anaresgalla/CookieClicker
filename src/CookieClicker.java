@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
@@ -32,6 +34,13 @@ public class CookieClicker extends JFrame {
 
         // 2.Cookie Button
         JButton cookieButton = createImageButton("resources/cookie.png");
+        cookieButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int counter = Integer.parseInt(counterField.getText());
+                counterField.setText(Integer.toString(++counter));
+            }
+        });
 
         jPanel.add(cookieButton);
         springLayout.putConstraint(SpringLayout.WEST, cookieButton, 95, SpringLayout.WEST, jPanel);
